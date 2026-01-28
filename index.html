@@ -5,8 +5,6 @@
   <title>Student Academic Risk Analyzer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <!-- Include html2pdf library for PDF export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
@@ -57,12 +55,15 @@
     <button class="reset" onclick="location.reload()">Reset</button>
     <button onclick="showHistory()">View Previous Records</button>
     <button class="reset" onclick="clearHistory()">Clear History</button>
+
+    <!-- Power BI Export Button -->
+    <button onclick="exportData()">Export Data for Power BI</button>
+
   </div>
 
   <div id="result"></div>
 </div>
 
-<!-- Include your JS -->
 <script src="script.js"></script>
 </body>
 </html>
