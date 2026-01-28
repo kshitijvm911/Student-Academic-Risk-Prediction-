@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe3b3 0%, #ffd6d6 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Container */
+.container {
+  width: 380px;
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Card */
+.card {
+  background: linear-gradient(180deg, #ffffff, #f2f5ff);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  border: 1px solid #e0e6ff;
+  animation: fadeUp 0.7s ease;
+}
+
+/* Hint */
+.hint {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Inputs */
+.input-box {
+  display: flex;
+  align-items: center;
+  background: #eef2ff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.input-box:hover {
+  background: #dde3ff;
+  transform: translateY(-1px);
+}
+
+.input-box span {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.input-box input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+}
+
+.input-box input:focus {
+  outline: none;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  background: #7a8cff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.15s;
+}
+
+button:hover {
+  background: #6575e6;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.reset {
+  background: #888;
+}
+
+.reset:hover {
+  background: #666;
+}
+
+/* Result */
+#result {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: left;
+  background: linear-gradient(180deg, #ffffff, #f7f9ff);
+  padding: 16px;
+  border-radius: 14px;
+  border-left: 4px solid #7a8cff;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.14);
+  animation: fadeUp 0.7s ease;
+}
+
+/* Section titles */
+.section-title {
+  font-weight: bold;
+  margin-top: 14px;
+}
+
+/* Animated risk bar */
+.risk-bar {
+  height: 6px;
+  width: 0;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: width 1.2s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
