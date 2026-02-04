@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="nav-top"><a href="index.html" class="nav-btn">🏠 Home</a></div>
+    <div class="container">
+        <div class="card">
+            <h2 id="login-header">Staff Login 🔐</h2>
+            <div class="input-box">📧 <input type="email" id="email" placeholder="Email Address"></div>
+            <div class="input-box">🔑 <input type="password" id="pass" placeholder="Password"></div>
+            <button class="btn-primary" onclick="handleLogin()">Login</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

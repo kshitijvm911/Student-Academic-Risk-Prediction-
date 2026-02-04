@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --bg: #f1f5f9;
+    --text: #1e293b;
+}
+
+body {
+    background: radial-gradient(circle at top, #e0e7ff, var(--bg));
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: var(--text);
+}
+
+.container { width: 90%; max-width: 480px; padding: 20px; position: relative; }
+.container.wide { max-width: 1200px; }
+
+/* Cards */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+h2, h3 { margin-top: 0; text-align: center; color: var(--text); }
+h2 { font-weight: 600; margin-bottom: 20px; }
+
+/* Inputs */
+.input-box {
+    background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;
+    padding: 12px 16px; margin-bottom: 15px; display: flex; align-items: center;
+    transition: border-color 0.2s;
+}
+.input-box:focus-within { border-color: var(--primary); }
+.input-box input, .input-box select {
+    border: none; background: transparent; width: 100%; outline: none; 
+    font-size: 14px; font-family: 'Poppins'; color: var(--text); margin-left: 10px;
+}
+
+/* Buttons */
+button {
+    cursor: pointer; border: none; font-family: 'Poppins'; transition: all 0.2s; 
+    border-radius: 8px; font-weight: 600; font-size: 14px;
+}
+.btn-primary { background: var(--primary); color: white; padding: 14px; width: 100%; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2); }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.btn-primary:disabled { background: #94a3b8; cursor: not-allowed; }
+
+.btn-danger { background: var(--danger); color: white; padding: 8px 16px; }
+.btn-danger-small { background: #fee2e2; color: var(--danger); padding: 5px 10px; font-size: 12px; }
+.btn-danger-small:hover { background: var(--danger); color: white; }
+
+.view-btn { background: #e0e7ff; color: var(--primary); padding: 5px 12px; }
+.view-btn:hover { background: var(--primary); color: white; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; border-radius: 8px; overflow: hidden; }
+th { text-align: left; padding: 15px; color: #64748b; font-size: 13px; background: #f8fafc; text-transform: uppercase; letter-spacing: 0.5px; }
+td { padding: 15px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+
+/* Navigation */
+.header-card { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.nav-top { position: absolute; top: 20px; right: 20px; z-index: 10; }
+.nav-btn { background: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; color: var(--text); box-shadow: 0 4px 6px rgba(0,0,0,0.05); font-weight: 600; font-size: 14px; transition: 0.2s; }
+.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 8px rgba(0,0,0,0.1); }
+
+/* --- TOAST NOTIFICATIONS --- */
+#toast-container { position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+.toast { min-width: 250px; padding: 16px; border-radius: 8px; background: white; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); display: flex; align-items: center; animation: slideIn 0.3s ease-out forwards; border-left: 5px solid; }
+.toast.success { border-left-color: var(--success); }
+.toast.error { border-left-color: var(--danger); }
+.toast-icon { margin-right: 12px; font-size: 18px; }
+
+@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes fadeOut { to { opacity: 0; transform: translateX(100%); } }
+
+/* Modals */
+.modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); display: none; justify-content: center; align-items: center; z-index: 1000; }
+.modal-card { background: white; padding: 30px; border-radius: 16px; width: 90%; max-width: 400px; animation: slideUp 0.3s ease-out; }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }

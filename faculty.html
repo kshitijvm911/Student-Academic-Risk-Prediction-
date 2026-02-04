@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container wide">
+        <div class="card header-card">
+            <h3 id="fac-name">Loading...</h3>
+            <button class="btn-danger" onclick="logout()">Logout</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+            <div class="card">
+                <h3>Class Risk Overview</h3>
+                <div style="height: 250px; position: relative;"><canvas id="classChart"></canvas></div>
+            </div>
+
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                    <h3 id="class-title" style="margin:0;">Records</h3>
+                    <div class="input-box" style="margin:0; width: 200px;">🔍 <input type="text" id="facultySearch" placeholder="Search..."></div>
+                </div>
+                <table>
+                    <thead><tr><th>Name</th><th>Risk</th><th>Att %</th><th>Action</th></tr></thead>
+                    <tbody id="student-list"><tr><td colspan="4" style="text-align:center;">Loading data...</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="detailsModal" class="modal-overlay">
+        <div class="modal-card" style="max-width: 500px; width: 90%;">
+            <h2 id="modal-student-name" style="margin-bottom:5px;">Student Details</h2>
+            <p id="m-dept" style="text-align:center; color:#64748b; margin-top:0;">-</p>
+            
+            <div style="height: 300px; width: 100%; position: relative; margin-bottom:20px;">
+                <canvas id="studentRadarChart"></canvas>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; font-size:14px; text-align:center;">
+                <div style="background:#f8fafc; padding:10px; border-radius:8px;">📅 Att: <b id="m-att"></b></div>
+                <div style="background:#f8fafc; padding:10px; border-radius:8px;">🎯 Marks: <b id="m-marks"></b></div>
+                <div style="background:#f8fafc; padding:10px; border-radius:8px;">📖 Study: <b id="m-study"></b></div>
+                <div style="background:#f8fafc; padding:10px; border-radius:8px;">🛏️ Sleep: <b id="m-sleep"></b></div>
+                <div style="background:#f8fafc; padding:10px; border-radius:8px;">📱 Phone: <b id="m-phone"></b></div>
+            </div>
+            
+            <button class="btn-primary" style="margin-top:20px;" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

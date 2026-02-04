@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container wide">
+        <div class="card header-card">
+            <h3>Master Admin Portal 👑</h3>
+            <button class="btn-danger" onclick="logout()">Logout</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            
+            <div class="card">
+                <h3>Add New Faculty</h3>
+                <div class="input-box">👤 <input type="text" id="reg-name" placeholder="Full Name"></div>
+                <div class="input-box">📧 <input type="email" id="reg-email" placeholder="Email Address"></div>
+                <div class="input-box">🔑 <input type="password" id="reg-pass" placeholder="Password (min 6 chars)"></div>
+                <div class="input-box">🏫 
+                    <select id="reg-dept">
+                        <option value="" disabled selected>Assign Class</option>
+                        <option value="CSE A">CSE A</option>
+                        <option value="CSE B">CSE B</option>
+                        <option value="CSE C">CSE C</option>
+                        <option value="CSE D">CSE D</option>
+                        <option value="CSBS">CSBS</option>
+                        <option value="ADS">ADS</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="MECH">MECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="CC">CC</option>
+                    </select>
+                </div>
+                <button class="btn-primary" id="create-fac-btn">Register Faculty</button>
+            </div>
+
+            <div class="card">
+                <h3>Registered Faculty</h3>
+                <table>
+                    <thead><tr><th>Name</th><th>Dept</th><th>Action</th></tr></thead>
+                    <tbody id="faculty-list"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Global Student Risk Overview</h3>
+            <table>
+                <thead><tr><th>Student</th><th>Dept</th><th>Risk</th><th>Att %</th><th>Action</th></tr></thead>
+                <tbody id="student-list"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
