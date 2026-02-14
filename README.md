@@ -2,6 +2,9 @@
 
 **Academic Risk Analyzer** is a proactive web application designed to identify and mitigate student academic failure before it happens. Instead of relying solely on exam results, this system uses a **"Holistic Logic Algorithm"** that evaluates a student's lifestyle (Sleep, Study Hours, Phone Usage) alongside academic metrics (Attendance, Marks) to calculate a precise **Risk Profile**. It provides instant, actionable feedback to students and data-driven insights to faculty.
 
+Live demo:https://academic-risk-analyzer.web.app/index.html
+
+
 🚀 **Key Features**
 
 ### 1. 🧘 Student Portal (Self-Analysis)
